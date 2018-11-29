@@ -1,5 +1,5 @@
 import Vapor
-import FluentSQLite
+import FluentPostgreSQL
 
 final class Acronym: Codable {
     var id: Int?
@@ -22,7 +22,7 @@ extension Acronym: Model {
     public static var idKey: IDKey = \Acronym.id
  } This code can be improved further with SQLiteModel . Replace*/
 
-extension Acronym: SQLiteModel {}
+extension Acronym: PostgreSQLModel {}
 
 // Fluent packages为每个数据库提供了模型帮助程序协议，因此您不必指定数据库、ID类型、密钥。
 // SQLiteModel协议必须具有Int类型的ID？名为id，
